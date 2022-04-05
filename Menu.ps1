@@ -1,3 +1,7 @@
+# PowerShell Scripts
+# Copyright Â© 2022 Dor Solomon
+# SPDX-License-Identifier: AGPL-3.0-only
+    
 $Test = Read-Host "Type the AD group you require"
 function Show-Menu
 {
@@ -22,7 +26,7 @@ do
            '1' {
                 cls
                 'You chose option #1 for full names in a text file.'
-                Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="ùí îìà";Expression={$_.Name}} | Sort-Object "ùí îìà" | Out-File $home\Desktop\Names.txt
+                Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="Ã¹Ã­ Ã®Ã¬Ã ";Expression={$_.Name}} | Sort-Object "Ã¹Ã­ Ã®Ã¬Ã " | Out-File $home\Desktop\Names.txt
                 'Completed.'
            } '2' {
                 cls
