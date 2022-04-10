@@ -1,6 +1,6 @@
 # PowerShell Scripts
 # Copyright © 2022 Dor Solomon
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: GPL-3.0-only
     
 $Test = Read-Host "Type the AD group you require"
 function Show-Menu
