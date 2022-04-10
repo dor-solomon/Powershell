@@ -1,6 +1,6 @@
-﻿# PowerShell Scripts
+# PowerShell Scripts
 # Copyright © 2022 Dor Solomon
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: GPL-3.0-only
 
 $csvfile = Read-Host "Enter the csv file's path ($home\Desktop\list.csv)"
 $column = Read-Host "Enter the column's name"
