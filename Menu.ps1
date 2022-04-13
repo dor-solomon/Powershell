@@ -8,34 +8,30 @@ function Show-Menu
      param (
            [string]$Title = 'My Menu'
      )
-     cls
+     Clear-Host
      Write-Host "================ $Title ================"
     
      Write-Host "1: Press '1' for full names in a text file."
      Write-Host "2: Press '2' for usernames in a csv file."
-     Write-Host "3: Press '3' for no option."
      Write-Host "Q: Press 'Q' to quit."
 }
 
 do
 {
      Show-Menu
-     $input = Read-Host "Please make a selection"
-     switch ($input)
+     $selection = Read-Host "Please make a selection"
+     switch ($selection)
      {
            '1' {
-                cls
+                Clear-Host
                 'You chose option #1 for full names in a text file.'
                 Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="ùí îìà";Expression={$_.Name}} | Sort-Object "ùí îìà" | Out-File $home\Desktop\Names.txt
                 'Completed.'
            } '2' {
-                cls
+                Clear-Host
                 'You chose option #2 for usernames in a csv file.'
                 Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="User Name";Expression={$_.SamAccountName}} | Sort-Object "User Name" | Export-CSV -NoTypeInformation -Path $home\Desktop\Names.csv -Encoding UTF8
                 'Completed.'
-           } '3' {
-                cls
-                'You chose option #3 which does nothing.'
            } 'q' {
                 return
            }

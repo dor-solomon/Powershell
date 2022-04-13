@@ -6,7 +6,7 @@ $csvfile = Read-Host "Enter the csv file's path ($home\Desktop\list.csv)"
 $column = Read-Host "Enter the column's name"
 $ADattribute = Read-Host "Enter the Active Directory attribute"
 $csv = Import-Csv $csvfile
-$headers = $csv | Get-Member -MemberType NoteProperty | select -Expand Name
+$headers = $csv | Get-Member -MemberType NoteProperty | Select-Object -Expand Name
 $output =
    foreach ($data in $csv.$column) {
         $activedata = $data.Substring(0,$data.Length-1)
