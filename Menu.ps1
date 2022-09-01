@@ -1,6 +1,6 @@
 # Powershell Scripts
-# Copyright � 2022 Dor Solomon
-# SPDX-License-Identifier: AGPL-3.0-only
+# Copyright @ 2022 Dor Solomon
+# SPDX-License-Identifier: GPL-3.0-only
 
 $Test = Read-Host "Type the AD group you require"
 function Show-Menu
@@ -27,7 +27,7 @@ do
            '1' {
                 cls
                 'You chose option #1 for a list of full names in a text file.'
-                Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="�� ���";Expression={$_.Name}} | Sort-Object "�� ���" | Out-File $home\Desktop\Names.txt
+                Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="Names";Expression={$_.Name}} | Sort-Object "Names" | Out-File $home\Desktop\Names.txt
                 'Completed.'
            } '2' {
                 cls
@@ -37,7 +37,7 @@ do
            } '3' {
                 cls
                 'You chose option #3 for a list of full names in a csv file.'
-                Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="�� ���";Expression={$_.Name}} | Sort-Object "�� ���" | Export-CSV -NoTypeInformation -Path $home\Desktop\Names.csv -Encoding UTF8
+                Get-ADGroupMember -Identity "$Test" | Select-Object @{Name="Names";Expression={$_.Name}} | Sort-Object "Names" | Export-CSV -NoTypeInformation -Path $home\Desktop\Names.csv -Encoding UTF8
                 'Completed.'
            } '4' {
                 cls
